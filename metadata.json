@@ -1,0 +1,8 @@
+{
+  "name": "Remix EduGo — Zamonaviy Ta\u0027lim Platformasi",
+  "description": "EduGo o\u0027quvchilar, o\u0027qituvchilar va ma\u0027murlar uchun zamonaviy, qulay va to\u0027liq moslashuvchan (mobile-first) ta\u0027lim ekotizimi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

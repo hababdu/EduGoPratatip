@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="uz" class="dark">
+  <head>
+    <script>
+      (function () {
+        try {
+          var _origFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          if (typeof Object.defineProperty === 'function') {
+            try {
+              Object.defineProperty(window, 'fetch', {
+                get: function () {
+                  return _origFetch;
+                },
+                set: function (newFetch) {
+                  _origFetch = newFetch;
+                },
+                configurable: true,
+                enumerable: true,
+              });
+            } catch (e) {}
+
+            try {
+              if (typeof Window !== 'undefined' && Window.prototype) {
+                Object.defineProperty(Window.prototype, 'fetch', {
+                  get: function () {
+                    return _origFetch;
+                  },
+                  set: function (newFetch) {
+                    _origFetch = newFetch;
+                  },
+                  configurable: true,
+                  enumerable: true,
+                });
+              }
+            } catch (e2) {}
+          }
+        } catch (err) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>EduGo — Zamonaviy Ta'lim Platformasi</title>
+    <meta name="description" content="EduGo o'quvchilar, o'qituvchilar va ma'murlar uchun zamonaviy, qulay va to'liq moslashuvchan (mobile-first) ta'lim ekotizimi." />
+    <meta property="og:title" content="EduGo — Zamonaviy Ta'lim Platformasi" />
+    <meta property="og:description" content="EduGo o'quvchilar, o'qituvchilar va ma'murlar uchun zamonaviy, qulay va to'liq moslashuvchan (mobile-first) ta'lim ekotizimi." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0d0f1d" />
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0b0d19] text-[#e8ebf8] antialiased selection:bg-[#ffb020]/20 selection:text-[#ffb020] min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
